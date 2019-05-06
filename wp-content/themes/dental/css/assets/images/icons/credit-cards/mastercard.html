@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+    <meta name='viewport' content='width=device-width, initial-scale=1'>	<meta http-equiv="X-UA-Compatible" content="IE=edge"><script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,n,t){function r(t){if(!n[t]){var o=n[t]={exports:{}};e[t][0].call(o.exports,function(n){var o=e[t][1][n];return r(o||n)},o,o.exports)}return n[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<t.length;o++)r(t[o]);return r}({1:[function(e,n,t){function r(){}function o(e,n,t){return function(){return i(e,[c.now()].concat(u(arguments)),n?null:this,t),n?void 0:this}}var i=e("handle"),a=e(3),u=e(4),f=e("ee").get("tracer"),c=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(e,n){s[n]=o(d+n,!0,"api")}),s.addPageAction=o(d+"addPageAction",!0),s.setCurrentRouteName=o(d+"routeName",!0),n.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,n){var t={},r=this,o="function"==typeof n;return i(l+"tracer",[c.now(),e,t],r),function(){if(f.emit((o?"":"no-")+"fn-start",[c.now(),r,o],t),o)try{return n.apply(this,arguments)}catch(e){throw f.emit("fn-err",[arguments,this,e],t),e}finally{f.emit("fn-end",[c.now()],t)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,n){m[n]=o(l+n)}),newrelic.noticeError=function(e,n){"string"==typeof e&&(e=new Error(e)),i("err",[e,c.now(),!1,n])}},{}],2:[function(e,n,t){function r(e,n){if(!o)return!1;if(e!==o)return!1;if(!n)return!0;if(!i)return!1;for(var t=i.split("."),r=n.split("."),a=0;a<r.length;a++)if(r[a]!==t[a])return!1;return!0}var o=null,i=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var u=navigator.userAgent,f=u.match(a);f&&u.indexOf("Chrome")===-1&&u.indexOf("Chromium")===-1&&(o="Safari",i=f[1])}n.exports={agent:o,version:i,match:r}},{}],3:[function(e,n,t){function r(e,n){var t=[],r="",i=0;for(r in e)o.call(e,r)&&(t[i]=n(r,e[r]),i+=1);return t}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],4:[function(e,n,t){function r(e,n,t){n||(n=0),"undefined"==typeof t&&(t=e?e.length:0);for(var r=-1,o=t-n||0,i=Array(o<0?0:o);++r<o;)i[r]=e[n+r];return i}n.exports=r},{}],5:[function(e,n,t){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,n,t){function r(){}function o(e){function n(e){return e&&e instanceof r?e:e?f(e,u,i):i()}function t(t,r,o,i){if(!d.aborted||i){e&&e(t,r,o);for(var a=n(o),u=v(t),f=u.length,c=0;c<f;c++)u[c].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function l(e,n){h[e]=v(e).concat(n)}function m(e,n){var t=h[e];if(t)for(var r=0;r<t.length;r++)t[r]===n&&t.splice(r,1)}function v(e){return h[e]||[]}function g(e){return p[e]=p[e]||o(t)}function w(e,n){c(e,function(e,t){n=n||"feature",y[t]=n,n in s||(s[n]=[])})}var h={},y={},b={on:l,addEventListener:l,removeEventListener:m,emit:t,get:g,listeners:v,context:n,buffer:w,abort:a,aborted:!1};return b}function i(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var u="nr@context",f=e("gos"),c=e(3),s={},p={},d=n.exports=o();d.backlog=s},{}],gos:[function(e,n,t){function r(e,n,t){if(o.call(e,n))return e[n];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,n,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[n]=r,r}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(e,n,t){function r(e,n,t,r){o.buffer([e],r),o.emit(e,n,t)}var o=e("ee").get("handle");n.exports=r,r.ee=o},{}],id:[function(e,n,t){function r(e){var n=typeof e;return!e||"object"!==n&&"function"!==n?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");n.exports=r},{}],loader:[function(e,n,t){function r(){if(!E++){var e=x.info=NREUM.info,n=l.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&n))return s.abort();c(y,function(n,t){e[n]||(e[n]=t)}),f("mark",["onload",a()+x.offset],null,"api");var t=l.createElement("script");t.src="https://"+e.agent,n.parentNode.insertBefore(t,n)}}function o(){"complete"===l.readyState&&i()}function i(){f("mark",["domContent",a()+x.offset],null,"api")}function a(){return O.exists&&performance.now?Math.round(performance.now()):(u=Math.max((new Date).getTime(),u))-x.offset}var u=(new Date).getTime(),f=e("handle"),c=e(3),s=e("ee"),p=e(2),d=window,l=d.document,m="addEventListener",v="attachEvent",g=d.XMLHttpRequest,w=g&&g.prototype;NREUM.o={ST:setTimeout,SI:d.setImmediate,CT:clearTimeout,XHR:g,REQ:d.Request,EV:d.Event,PR:d.Promise,MO:d.MutationObserver};var h=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1118.min.js"},b=g&&w&&w[m]&&!/CriOS/.test(navigator.userAgent),x=n.exports={offset:u,now:a,origin:h,features:{},xhrWrappable:b,userAgent:p};e(1),l[m]?(l[m]("DOMContentLoaded",i,!1),d[m]("load",r,!1)):(l[v]("onreadystatechange",o),d[v]("onload",r)),f("mark",["firstbyte",u],null,"api");var E=0,O=e(5)},{}]},{},["loader"]);</script>
+					<script type="text/javascript">document.documentElement.className = document.documentElement.className + ' yes-js js_active js'</script>
+			<title>Page not found &#8211; Dental WordPress Theme</title>
+			<style>
+				.wishlist_table .add_to_cart, a.add_to_wishlist.button.alt { border-radius: 16px; -moz-border-radius: 16px; -webkit-border-radius: 16px; }			</style>
+		<link href='https://dental.dttheme.com/wp-content/themes/dental/images/favicon.ico' rel='shortcut icon' type='image/x-icon' />
+<link href='https://dental.dttheme.com/wp-content/themes/dental/images/apple-touch-icon.png' rel='apple-touch-icon'/>
+<link href='https://dental.dttheme.com/wp-content/themes/dental/images/apple-touch-icon-114x114.png' sizes='114x114' rel='apple-touch-icon'/>
+<link href='https://dental.dttheme.com/wp-content/themes/dental/images/apple-touch-icon-72x72.png' sizes='72x72' rel='apple-touch-icon'/>
+<link href='https://dental.dttheme.com/wp-content/themes/dental/images/apple-touch-icon-144x144.png' sizes='144x144' rel='apple-touch-icon'/>
+<link rel='dns-prefetch' href='//code.jquery.com' />
+<link rel='dns-prefetch' href='//fonts.googleapis.com' />
+<link rel='dns-prefetch' href='//s.w.org' />
+<link rel="alternate" type="application/rss+xml" title="Dental WordPress Theme &raquo; Feed" href="https://dental.dttheme.com/feed/" />
+<link rel="alternate" type="application/rss+xml" title="Dental WordPress Theme &raquo; Comments Feed" href="https://dental.dttheme.com/comments/feed/" />
+<link rel="alternate" type="text/calendar" title="Dental WordPress Theme &raquo; iCal Feed" href="https://dental.dttheme.com/events/?ical=1" />
+		<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/11\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/11\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/dental.dttheme.com\/wp-includes\/js\/wp-emoji-release.min.js?ver=4.9.9"}};
+			!function(a,b,c){function d(a,b){var c=String.fromCharCode;l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,a),0,0);var d=k.toDataURL();l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,b),0,0);var e=k.toDataURL();return d===e}function e(a){var b;if(!l||!l.fillText)return!1;switch(l.textBaseline="top",l.font="600 32px Arial",a){case"flag":return!(b=d([55356,56826,55356,56819],[55356,56826,8203,55356,56819]))&&(b=d([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]),!b);case"emoji":return b=d([55358,56760,9792,65039],[55358,56760,8203,9792,65039]),!b}return!1}function f(a){var c=b.createElement("script");c.src=a,c.defer=c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var g,h,i,j,k=b.createElement("canvas"),l=k.getContext&&k.getContext("2d");for(j=Array("flag","emoji"),c.supports={everything:!0,everythingExceptFlag:!0},i=0;i<j.length;i++)c.supports[j[i]]=e(j[i]),c.supports.everything=c.supports.everything&&c.supports[j[i]],"flag"!==j[i]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[j[i]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(h=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",h,!1),a.addEventListener("load",h,!1)):(a.attachEvent("onload",h),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),g=c.source||{},g.concatemoji?f(g.concatemoji):g.wpemoji&&g.twemoji&&(f(g.twemoji),f(g.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+<link rel='stylesheet' id='baslider_main_style-css'  href='https://dental.dttheme.com/wp-content/plugins/baslider/css/style.css?ver=4.9.9' type='text/css' media='all' />
+<link rel='stylesheet' id='bbp-default-css'  href='https://dental.dttheme.com/wp-content/themes/dental/css/bbpress.css?ver=2.5.14-6684' type='text/css' media='screen' />
+<link rel='stylesheet' id='bp-parent-css-css'  href='https://dental.dttheme.com/wp-content/themes/dental/css/buddypress.css?ver=2.9.3' type='text/css' media='screen' />
+<link rel='stylesheet' id='contact-form-7-css'  href='https://dental.dttheme.com/wp-content/plugins/contact-form-7/includes/css/styles.css?ver=5.0' type='text/css' media='all' />
+<link rel='stylesheet' id='dt-animation-css-css'  href='https://dental.dttheme.com/wp-content/plugins/designthemes-core-features/shortcodes/css/animations.css?ver=4.9.9' type='text/css' media='all' />
+<link rel='stylesheet' id='dt-sc-css-css'  href='https://dental.dttheme.com/wp-content/plugins/designthemes-core-features/shortcodes/css/shortcodes.css?ver=4.9.9' type='text/css' media='all' />
+<link rel='stylesheet' id='dt-doctor-addon-css'  href='https://dental.dttheme.com/wp-content/plugins/designthemes-doctor-addon/css/doctors.css?ver=4.9.9' type='text/css' media='all' />
+<link rel='stylesheet' id='resmap_css-css'  href='https://dental.dttheme.com/wp-content/plugins/responsive-maps-plugin/includes/css/resmap.min.css?ver=4.0' type='text/css' media='all' />
+<link rel='stylesheet' id='rs-plugin-settings-css'  href='https://dental.dttheme.com/wp-content/plugins/revslider/public/assets/css/settings.css?ver=5.4.1' type='text/css' media='all' />
+<style id='rs-plugin-settings-inline-css' type='text/css'>
+#rs-demo-id {}
+</style>
+<link rel='stylesheet' id='tribe-events-calendar-pro-style-css'  href='https://dental.dttheme.com/wp-content/plugins/events-calendar-pro/src/resources/css/tribe-events-pro-full.min.css?ver=4.4.5' type='text/css' media='all' />
+<link rel='stylesheet' id='tribe-events-calendar-pro-mobile-style-css'  href='https://dental.dttheme.com/wp-content/plugins/events-calendar-pro/src/resources/css/tribe-events-pro-full-mobile.min.css?ver=4.4.5' type='text/css' media='only screen and (max-width: 768px)' />
+<link rel='stylesheet' id='tribe-events-calendar-pro-override-style-css'  href='https://dental.dttheme.com/wp-content/themes/dental/tribe-events/pro/tribe-events-pro.css?ver=4.9.9' type='text/css' media='all' />
+<link rel='stylesheet' id='woocommerce_prettyPhoto_css-css'  href='https://dental.dttheme.com/wp-content/plugins/woocommerce/assets/css/prettyPhoto.css?ver=3.2.6' type='text/css' media='all' />
+<link rel='stylesheet' id='jquery-selectBox-css'  href='https://dental.dttheme.com/wp-content/plugins/yith-woocommerce-wishlist/assets/css/jquery.selectBox.css?ver=1.2.0' type='text/css' media='all' />
+<link rel='stylesheet' id='yith-wcwl-main-css'  href='https://dental.dttheme.com/wp-content/plugins/yith-woocommerce-wishlist/assets/css/style.css?ver=2.2.1' type='text/css' media='all' />
+<link rel='stylesheet' id='yith-wcwl-font-awesome-css'  href='https://dental.dttheme.com/wp-content/plugins/yith-woocommerce-wishlist/assets/css/font-awesome.min.css?ver=4.7.0' type='text/css' media='all' />
+<link rel='stylesheet' id='jquery-ui-datepicker-css'  href='https://code.jquery.com/ui/1.11.0/themes/smoothness/jquery-ui.css?ver=4.9.9' type='text/css' media='all' />
+<link rel='stylesheet' id='js_composer_front-css'  href='https://dental.dttheme.com/wp-content/plugins/js_composer/assets/css/js_composer.min.css?ver=5.1.1' type='text/css' media='all' />
+<link rel='stylesheet' id='bsf-Defaults-css'  href='https://dental.dttheme.com/wp-content/uploads/smile_fonts/Defaults/Defaults.css?ver=4.9.9' type='text/css' media='all' />
+<link rel='stylesheet' id='reset-css'  href='https://dental.dttheme.com/wp-content/themes/dental/css/reset.css?ver=1.3' type='text/css' media='all' />
+<link rel='stylesheet' id='dental-css'  href='https://dental.dttheme.com/wp-content/themes/dental/style.css?ver=1.3' type='text/css' media='all' />
+<link rel='stylesheet' id='prettyphoto-css'  href='https://dental.dttheme.com/wp-content/plugins/js_composer/assets/lib/prettyphoto/css/prettyPhoto.min.css?ver=5.1.1' type='text/css' media='all' />
+<link rel='stylesheet' id='custom-font-awesome-css'  href='https://dental.dttheme.com/wp-content/themes/dental/css/font-awesome.min.css?ver=4.3.0' type='text/css' media='all' />
+<link rel='stylesheet' id='pe-icon-7-stroke-css'  href='https://dental.dttheme.com/wp-content/themes/dental/css/pe-icon-7-stroke.css?ver=4.9.9' type='text/css' media='all' />
+<link rel='stylesheet' id='stroke-gap-icons-style-css'  href='https://dental.dttheme.com/wp-content/themes/dental/css/stroke-gap-icons-style.css?ver=4.9.9' type='text/css' media='all' />
+<link rel='stylesheet' id='icon-moon-ultimate-css'  href='https://dental.dttheme.com/wp-content/themes/dental/css/icon-moon-ultimate.css?ver=4.9.9' type='text/css' media='all' />
+<link rel='stylesheet' id='icon-moon-solid-css'  href='https://dental.dttheme.com/wp-content/themes/dental/css/icon-moon.css?ver=4.9.9' type='text/css' media='all' />
+<link rel='stylesheet' id='material-design-iconic-css'  href='https://dental.dttheme.com/wp-content/themes/dental/css/material-design-iconic-font.min.css?ver=4.9.9' type='text/css' media='all' />
+<link rel='stylesheet' id='dental.notfound-css'  href='https://dental.dttheme.com/wp-content/themes/dental/css/notfound.css?ver=1.3' type='text/css' media='all' />
+<link rel='stylesheet' id='dental.loader-css'  href='https://dental.dttheme.com/wp-content/themes/dental/css/loaders.css?ver=1.3' type='text/css' media='all' />
+<link rel='stylesheet' id='dental.woo-css'  href='https://dental.dttheme.com/wp-content/themes/dental/css/woocommerce.css?ver=1.3' type='text/css' media='all' />
+<link rel='stylesheet' id='skin-css'  href='https://dental.dttheme.com/wp-content/themes/dental/css/skins/cyan/style.css?ver=4.9.9' type='text/css' media='all' />
+<link rel='stylesheet' id='dental.customevent-css'  href='https://dental.dttheme.com/wp-content/themes/dental/tribe-events/custom.css?ver=1.3' type='text/css' media='all' />
+<link rel='stylesheet' id='dental.responsive-css'  href='https://dental.dttheme.com/wp-content/themes/dental/css/responsive.css?ver=1.3' type='text/css' media='all' />
+<link rel='stylesheet' id='dental-fonts-css'  href='https://fonts.googleapis.com/css?family=Roboto%3A100%2C300%2C400%2C400italic%2C500%2C600%2C700%2C800&#038;subset&#038;ver=1.3' type='text/css' media='all' />
+<link rel='stylesheet' id='dental.custom-css'  href='https://dental.dttheme.com/wp-content/themes/dental/css/custom.css?ver=1.3' type='text/css' media='all' />
+<style id='dental-combined-inline-css' type='text/css'>
+body, .layout-boxed .inner-wrapper { background-color:#fffff;}.extend-bg-fullwidth-left:after, .extend-bg-fullwidth-right:after{ background:;}.top-bar a, .dt-sc-dark-bg.top-bar a { color:; }#main-menu > ul.menu > li.current_page_item > a, #main-menu > ul.menu > li.current_page_ancestor > a, #main-menu > ul.menu > li.current-menu-item > a, #main-menu > ul.menu > li.current-menu-ancestor > a,.menu-active-highlight-grey #main-menu > ul.menu > li.current_page_item, .menu-active-highlight-grey #main-menu > ul.menu > li.current_page_ancestor, .menu-active-highlight-grey #main-menu > ul.menu > li.current-menu-item, .menu-active-highlight-grey #main-menu > ul.menu > li.current-menu-ancestor, .left-header #main-menu > ul.menu > li.current_page_item > a,.menu-active-highlight-with-arrow #main-menu > ul.menu > li.current_page_item > a, .menu-active-highlight-with-arrow #main-menu > ul.menu > li.current_page_ancestor > a, .menu-active-highlight-with-arrow #main-menu > ul.menu > li.current-menu-item > a, .menu-active-highlight-with-arrow #main-menu > ul.menu > li.current-menu-ancestor > a {background-color:;}.menu-active-highlight-grey #main-menu > ul.menu > li.current_page_item > a:before, .menu-active-highlight-grey #main-menu > ul.menu > li.current_page_ancestor > a:before, .menu-active-highlight-grey #main-menu > ul.menu > li.current-menu-item > a:before, .menu-active-highlight-grey #main-menu > ul.menu > li.current-menu-ancestor > a:before {background-color:;}.top-bar { color:#343434; background-color:#eeeeee}.top-bar a:hover, .dt-sc-dark-bg.top-bar a:hover { color:#343434; }#main-menu ul.menu > li > a { color:#343434; }.menu-active-highlight.menu-active-with-icon #main-menu > ul.menu > li.current_page_item > a:before, .menu-active-highlight.menu-active-with-icon #main-menu > ul.menu > li.current_page_ancestor > a:before, .menu-active-highlight.menu-active-with-icon #main-menu > ul.menu > li.current-menu-item > a:before, .menu-active-highlight.menu-active-with-icon #main-menu > ul.menu > li.current-menu-ancestor > a:before,.menu-active-highlight.menu-active-with-icon #main-menu > ul.menu > li.current_page_item > a:after, .menu-active-highlight.menu-active-with-icon #main-menu > ul.menu > li.current_page_ancestor > a:after, .menu-active-highlight.menu-active-with-icon #main-menu > ul.menu > li.current-menu-item > a:after, .menu-active-highlight.menu-active-with-icon #main-menu > ul.menu > li.current-menu-ancestor > a:after {background-color:#ffffff;}.menu-active-highlight #main-menu > ul.menu > li.current_page_item > a, .menu-active-highlight #main-menu > ul.menu > li.current_page_ancestor > a, .menu-active-highlight #main-menu > ul.menu > li.current-menu-item > a, .menu-active-highlight #main-menu > ul.menu > li.current-menu-ancestor > a { color:#ffffff; }.footer-widgets, .footer-bottom { background-color: rgba(246,249,249, 1); }.footer-widgets, #footer, .footer-copyright { color:#959595; }.footer-widgets a, #footer a { color:#959595; }#footer h3 { color:#343434; }.footer-copyright.dt-sc-dark-bg {background: rgba(52,52,52, 1);}#main-menu .megamenu-child-container > ul.sub-menu > li > a, #main-menu .megamenu-child-container > ul.sub-menu > li > .nolink-menu { color:; }#main-menu .megamenu-child-container > ul.sub-menu > li > a:hover { color:; }#main-menu .megamenu-child-container > ul.sub-menu > li.current_page_item > a, #main-menu .megamenu-child-container > ul.sub-menu > li.current_page_ancestor > a, #main-menu .megamenu-child-container > ul.sub-menu > li.current-menu-item > a, #main-menu .megamenu-child-container > ul.sub-menu > li.current-menu-ancestor > a { color:; }#main-menu .megamenu-child-container ul.sub-menu > li > ul > li > a, #main-menu ul li.menu-item-simple-parent ul > li > a { color:; }h1, .dt-sc-counter.type1 .dt-sc-counter-number, .dt-sc-portfolio-sorting a, .dt-sc-testimonial .dt-sc-testimonial-author cite, .dt-sc-pr-tb-col.minimal .dt-sc-price p, .dt-sc-pr-tb-col.minimal .dt-sc-price h6 span, .dt-sc-testimonial.special-testimonial-carousel blockquote, .dt-sc-pr-tb-col .dt-sc-tb-title, .dt-sc-pr-tb-col .dt-sc-tb-content, .dt-sc-pr-tb-col .dt-sc-tb-content li, .dt-sc-bar-text, .dt-sc-counter.type3 .dt-sc-counter-number, .dt-sc-newsletter-section.type2 .dt-sc-subscribe-frm input[type="submit"], .dt-sc-timeline .dt-sc-timeline-content h2 span, .dt-sc-model-sorting a, .dt-sc-icon-box.type9 .icon-content h4, .dt-sc-icon-box.type9 .icon-content h4 span, .dt-sc-menu-sorting a, .dt-sc-menu .image-overlay .price, .dt-sc-menu .menu-categories a, .dt-sc-pr-tb-col .dt-sc-price h6, ul.products li .onsale { font-family:Roboto, sans-serif; }h2 { font-family:Roboto, sans-serif; }h3, .dt-sc-testimonial.type1 blockquote, .blog-entry.entry-date-left .entry-date, .dt-sc-ribbon-title, .dt-sc-testimonial.type1 .dt-sc-testimonial-author cite { font-family:Roboto, sans-serif; }h4, .blog-entry .entry-meta, .dt-sc-button { font-family:Roboto, sans-serif; }h5 { font-family:Roboto, sans-serif; }h6 { font-family:Roboto, sans-serif; }h1 { font-size:30px; font-weight:300; letter-spacing:0px; }h2 { font-size:24px; font-weight:300; letter-spacing:0px; }h3 { font-size:18px; font-weight:300; letter-spacing:0px; }h4 { font-size:16px; font-weight:300; letter-spacing:0px; }h5 { font-size:14px; font-weight:300; letter-spacing:0px; }h6 { font-size:13px; font-weight:300; letter-spacing:0px; }body { font-size:16px; line-height:30px; }body, .blog-entry.blog-medium-style .entry-meta, .dt-sc-event-image-caption .dt-sc-image-content h3, .dt-sc-events-list .dt-sc-event-title h5, .dt-sc-team.type2 .dt-sc-team-details h4, .dt-sc-team.type2 .dt-sc-team-details h5, .dt-sc-contact-info.type5 h6, .dt-sc-sponsors .dt-sc-one-third h3, .dt-sc-testimonial.type5 .dt-sc-testimonial-author cite, .dt-sc-counter.type3 h4, .dt-sc-contact-info.type2 h6, .woocommerce ul.products li.product .onsale, #footer .mailchimp-form input[type="email"], .dt-sc-icon-box.type5 .icon-content h5, .main-header #searchform input[type="text"], .dt-sc-testimonial.type1 .dt-sc-testimonial-author cite small, .dt-sc-pr-tb-col.type2 .dt-sc-tb-content li, .dt-sc-team.rounded .dt-sc-team-details h5, .megamenu-child-container > ul.sub-menu > li > a .menu-item-description, .menu-item-description { font-family:Roboto, sans-serif; }#main-menu ul.menu > li > a, .left-header #main-menu > ul.menu > li > a { font-size:16px; font-weight:normal; letter-spacing:0px; }#main-menu ul.menu > li > a, .dt-sc-pr-tb-col .dt-sc-tb-title h5, .dt-sc-timeline .dt-sc-timeline-content h2, .dt-sc-icon-box.type3 .icon-content h4, .dt-sc-popular-procedures .details h3, .dt-sc-popular-procedures .details .duration, .dt-sc-popular-procedures .details .price, .dt-sc-counter.type2 .dt-sc-counter-number, .dt-sc-counter.type2 h4, .dt-sc-testimonial.type4 .dt-sc-testimonial-author cite { font-family:Roboto, sans-serif; }.app-btn .wpb_single_image.vc_align_left { float:left; margin-right:20px; }option { padding:6px;}
+</style>
+<script type='text/javascript' src='https://dental.dttheme.com/wp-includes/js/jquery/jquery.js?ver=1.12.4'></script>
+<script type='text/javascript' src='https://dental.dttheme.com/wp-includes/js/jquery/jquery-migrate.min.js?ver=1.4.1'></script>
+<script type='text/javascript' src='https://dental.dttheme.com/wp-content/plugins/baslider/js/jquery.baslider.min.js?ver=4.9.9'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var BP_Confirm = {"are_you_sure":"Are you sure?"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://dental.dttheme.com/wp-content/plugins/buddypress/bp-core/js/confirm.min.js?ver=2.9.3'></script>
+<script type='text/javascript' src='https://dental.dttheme.com/wp-content/plugins/buddypress/bp-core/js/widget-members.min.js?ver=2.9.3'></script>
+<script type='text/javascript' src='https://dental.dttheme.com/wp-content/plugins/buddypress/bp-core/js/jquery-query.min.js?ver=2.9.3'></script>
+<script type='text/javascript' src='https://dental.dttheme.com/wp-content/plugins/buddypress/bp-core/js/vendor/jquery-cookie.min.js?ver=2.9.3'></script>
+<script type='text/javascript' src='https://dental.dttheme.com/wp-content/plugins/buddypress/bp-core/js/vendor/jquery-scroll-to.min.js?ver=2.9.3'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var BP_DTheme = {"accepted":"Accepted","close":"Close","comments":"comments","leave_group_confirm":"Are you sure you want to leave this group?","mark_as_fav":"Favorite","my_favs":"My Favorites","rejected":"Rejected","remove_fav":"Remove Favorite","show_all":"Show all","show_all_comments":"Show all comments for this thread","show_x_comments":"Show all comments (%d)","unsaved_changes":"Your profile has unsaved changes. If you leave the page, the changes will be lost.","view":"View"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://dental.dttheme.com/wp-content/plugins/buddypress/bp-templates/bp-legacy/js/buddypress.min.js?ver=2.9.3'></script>
+<script type='text/javascript' src='https://dental.dttheme.com/wp-content/plugins/revslider/public/assets/js/jquery.themepunch.tools.min.js?ver=5.4.1'></script>
+<script type='text/javascript' src='https://dental.dttheme.com/wp-content/plugins/revslider/public/assets/js/jquery.themepunch.revolution.min.js?ver=5.4.1'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var wc_add_to_cart_params = {"ajax_url":"\/wp-admin\/admin-ajax.php","wc_ajax_url":"https:\/\/dental.dttheme.com\/?wc-ajax=%%endpoint%%","i18n_view_cart":"View cart","cart_url":"https:\/\/dental.dttheme.com\/cart\/","is_cart":"","cart_redirect_after_add":"no"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://dental.dttheme.com/wp-content/plugins/woocommerce/assets/js/frontend/add-to-cart.min.js?ver=3.2.6'></script>
+<script type='text/javascript' src='https://dental.dttheme.com/wp-content/plugins/js_composer/assets/js/vendors/woocommerce-add-to-cart.js?ver=5.1.1'></script>
+<script type='text/javascript' src='https://dental.dttheme.com/wp-content/themes/dental/framework/js/modernizr.custom.js?ver=4.9.9'></script>
+<link rel='https://api.w.org/' href='https://dental.dttheme.com/wp-json/' />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://dental.dttheme.com/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://dental.dttheme.com/wp-includes/wlwmanifest.xml" /> 
+<meta name="generator" content="WordPress 4.9.9" />
+<meta name="generator" content="WooCommerce 3.2.6" />
+				<script type="text/javascript">
+                var $mbas1 = jQuery.noConflict();
+                $mbas1(document).ready(function() {
+					$mbas1(document).on('mousemove','.beforeAfterSlidebar',function(e){
+						var offset =  $mbas1(this).offset();
+						var iTopLeft = (e.pageX - offset.left);
+						var iTopImgLeft = -(iTopLeft+2);
+						// set left of bottomimage div
+						if(!$mbas1(this).hasClass('traditional_slider'))
+						{
+						$mbas1(this).find(".topImage").css('left',iTopLeft);
+						$mbas1(this).find(".topImg").css('left',iTopImgLeft);
+						}
+						else
+						check_for_traditional();
+					});
+
+                  function check_for_traditional()
+                  {
+                    $mbas1(".beforeAfterSlidebar").each(function(index,value){
+                        if($mbas1(this).hasClass('traditional_slider'))
+                            $mbas1(this).find(".topImg").css('left','0px');
+                    });
+                  }
+                });
+                </script>
+		<script type="text/javascript">
+					var $mbas2 = jQuery.noConflict();
+					function get_width(id)
+					{
+						var width = $mbas2(id).width();
+						var half_div = width/2;
+						return half_div;
+					}
+					function start_slider(id,delay,auto,effect,left,right,pager)
+					{
+						var slider5c6eefcacee40 = $mbas2(".slides-"+id).bxSlider({
+							auto: auto,
+							pause: delay,
+							pager: pager,
+							nextSelector: "#slider-next-"+id,
+							prevSelector: "#slider-prev-"+id,
+							mode:effect,
+							adaptiveHeight: true,
+							onSlideAfter: function(){
+								reset_images(id);
+								$mbas2(window).on("resize", function(event){
+									reset_images(id);
+								});
+							},
+							onSliderLoad: function(){
+								$mbas2(document).trigger("basliderLoadEvent", [ slider5c6eefcacee40, id]);
+							}
+						});
+
+						return slider5c6eefcacee40;
+					}
+
+					function reset_images(id)
+					{
+						var width = get_width("#"+id);
+						var left = width;
+						var right = width+2;
+						$mbas2("#"+id+" .topImage").css("left",left);
+						$mbas2("#"+id+" .topImg").css("left",-right);
+						check_for_traditional();
+					}
+					function check_for_traditional()
+					  {
+						$mbas1(".beforeAfterSlidebar").each(function(index,value){
+							if($mbas1(this).hasClass("traditional_slider"))
+								$mbas1(this).find(".topImg").css("left","0px");
+						});
+					  }
+				</script>
+	<script type="text/javascript">var ajaxurl = 'https://dental.dttheme.com/wp-admin/admin-ajax.php';</script>
+
+<meta name="tec-api-version" content="v1"><meta name="tec-api-origin" content="https://dental.dttheme.com"><link rel="https://theeventscalendar.com/" href="https://dental.dttheme.com/wp-json/tribe/events/v1/" />	<noscript><style>.woocommerce-product-gallery{ opacity: 1 !important; }</style></noscript>
+	<meta name="generator" content="Powered by Visual Composer - drag and drop page builder for WordPress."/>
+<!--[if lte IE 9]><link rel="stylesheet" type="text/css" href="https://dental.dttheme.com/wp-content/plugins/js_composer/assets/css/vc_lte_ie9.min.css" media="screen"><![endif]--><meta name="generator" content="Powered by Slider Revolution 5.4.1 - responsive, Mobile-Friendly Slider Plugin for WordPress with comfortable drag and drop interface." />
+<noscript><style type="text/css"> .wpb_animate_when_almost_visible { opacity: 1; }</style></noscript></head>
+
+<body class="bp-legacy error404 tribe-no-js layout-wide fullwidth-header semi-transparent-header sticky-header header-on-slider woo-type1 wpb-js-composer js-comp-ver-5.1.1 vc_responsive no-js">
+
+<div class="wrapper type1" style="background-color:rgba(  f ,  f,  f, 1);">
+	<div class="container">
+        <div class="center-content-wrapper">
+            <div class="center-content"><div class="error-box square"><div class="error-box-inner"><h3>Oops!</h3><h2>404</h2><h4>Page Not Found</h4></div></div><div class="dt-sc-hr-invisible-xsmall"></div><p>It seems you&#039;ve venured too far.</p><p>Click here to go to home page.</p><div class="dt-sc-hr-invisible-xsmall"></div><a class="dt-sc-button filled small" target="_blank" href="https://dental.dttheme.com/">Back to Home</a>            </div>
+        </div>
+    </div>    
+</div>
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"095ddbfebf","applicationID":"46458586","transactionName":"YVJSZBBSDEIFURVRWVgYcVMWWg1fSwZRDA==","queueTime":0,"applicationTime":691,"atts":"TRVRElhIH0w=","errorBeacon":"bam.nr-data.net","agent":""}</script></body>
+		<script>
+		( function ( body ) {
+			'use strict';
+			body.className = body.className.replace( /\btribe-no-js\b/, 'tribe-js' );
+		} )( document.body );
+		</script>
+		<script type='text/javascript'> /* <![CDATA[ */var tribe_l10n_datatables = {"aria":{"sort_ascending":": activate to sort column ascending","sort_descending":": activate to sort column descending"},"length_menu":"Show _MENU_ entries","empty_table":"No data available in table","info":"Showing _START_ to _END_ of _TOTAL_ entries","info_empty":"Showing 0 to 0 of 0 entries","info_filtered":"(filtered from _MAX_ total entries)","zero_records":"No matching records found","search":"Search:","all_selected_text":"All items on this page were selected. ","select_all_link":"Select all pages","clear_selection":"Clear Selection.","pagination":{"all":"All","next":"Next","previous":"Previous"},"select":{"rows":{"0":"","_":": Selected %d rows","1":": Selected 1 row"}},"datepicker":{"dayNames":["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],"dayNamesShort":["Sun","Mon","Tue","Wed","Thu","Fri","Sat"],"dayNamesMin":["S","M","T","W","T","F","S"],"monthNames":["January","February","March","April","May","June","July","August","September","October","November","December"],"monthNamesShort":["January","February","March","April","May","June","July","August","September","October","November","December"],"nextText":"Next","prevText":"Prev","currentText":"Today","closeText":"Done"}};/* ]]> */ </script><script type='text/javascript' src='https://dental.dttheme.com/wp-content/plugins/bbpress/templates/default/js/editor.js?ver=2.5.14-6684'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var wpcf7 = {"apiSettings":{"root":"https:\/\/dental.dttheme.com\/wp-json\/contact-form-7\/v1","namespace":"contact-form-7\/v1"},"recaptcha":{"messages":{"empty":"Please verify that you are not a robot."}}};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://dental.dttheme.com/wp-content/plugins/contact-form-7/includes/js/scripts.js?ver=5.0'></script>
+<script type='text/javascript' src='https://dental.dttheme.com/wp-content/plugins/designthemes-core-features/shortcodes/js/jquery.tabs.min.js?ver=4.9.9'></script>
+<script type='text/javascript' src='https://dental.dttheme.com/wp-content/plugins/designthemes-core-features/shortcodes/js/jquery.tipTip.minified.js?ver=4.9.9'></script>
+<script type='text/javascript' src='https://dental.dttheme.com/wp-content/plugins/designthemes-core-features/shortcodes/js/jquery.inview.js?ver=4.9.9'></script>
+<script type='text/javascript' src='https://dental.dttheme.com/wp-content/plugins/designthemes-core-features/shortcodes/js/jquery.animateNumber.min.js?ver=4.9.9'></script>
+<script type='text/javascript' src='https://dental.dttheme.com/wp-content/plugins/designthemes-core-features/shortcodes/js/jquery.donutchart.js?ver=4.9.9'></script>
+<script type='text/javascript' src='https://dental.dttheme.com/wp-content/plugins/designthemes-core-features/shortcodes/js/shortcodes.js?ver=4.9.9'></script>
+<script type='text/javascript' src='https://dental.dttheme.com/wp-content/plugins/designthemes-doctor-addon/js/doctors.js?ver=4.9.9'></script>
+<script type='text/javascript' src='https://dental.dttheme.com/wp-content/plugins/woocommerce/assets/js/jquery-blockui/jquery.blockUI.min.js?ver=2.70'></script>
+<script type='text/javascript' src='https://dental.dttheme.com/wp-content/plugins/woocommerce/assets/js/js-cookie/js.cookie.min.js?ver=2.1.4'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var woocommerce_params = {"ajax_url":"\/wp-admin\/admin-ajax.php","wc_ajax_url":"https:\/\/dental.dttheme.com\/?wc-ajax=%%endpoint%%"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://dental.dttheme.com/wp-content/plugins/woocommerce/assets/js/frontend/woocommerce.min.js?ver=3.2.6'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var wc_cart_fragments_params = {"ajax_url":"\/wp-admin\/admin-ajax.php","wc_ajax_url":"https:\/\/dental.dttheme.com\/?wc-ajax=%%endpoint%%","fragment_name":"wc_fragments_b3f8bcf9140c5635086001408758f63b"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://dental.dttheme.com/wp-content/plugins/woocommerce/assets/js/frontend/cart-fragments.min.js?ver=3.2.6'></script>
+<script type='text/javascript' src='https://dental.dttheme.com/wp-content/plugins/woocommerce/assets/js/prettyPhoto/jquery.prettyPhoto.min.js?ver=3.1.6'></script>
+<script type='text/javascript' src='https://dental.dttheme.com/wp-content/plugins/yith-woocommerce-wishlist/assets/js/jquery.selectBox.min.js?ver=1.2.0'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var yith_wcwl_l10n = {"ajax_url":"\/wp-admin\/admin-ajax.php","redirect_to_cart":"no","multi_wishlist":"","hide_add_button":"1","is_user_logged_in":"","ajax_loader_url":"https:\/\/dental.dttheme.com\/wp-content\/plugins\/yith-woocommerce-wishlist\/assets\/images\/ajax-loader.gif","remove_from_wishlist_after_add_to_cart":"yes","labels":{"cookie_disabled":"We are sorry, but this feature is available only if cookies are enabled on your browser.","added_to_cart_message":"<div class=\"woocommerce-message\">Product correctly added to cart<\/div>"},"actions":{"add_to_wishlist_action":"add_to_wishlist","remove_from_wishlist_action":"remove_from_wishlist","move_to_another_wishlist_action":"move_to_another_wishlsit","reload_wishlist_and_adding_elem_action":"reload_wishlist_and_adding_elem"}};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://dental.dttheme.com/wp-content/plugins/yith-woocommerce-wishlist/assets/js/jquery.yith-wcwl.js?ver=2.2.1'></script>
+<script type='text/javascript' src='https://dental.dttheme.com/wp-content/themes/dental/framework/js/jquery.ui.totop.min.js?ver=4.9.9'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var dttheme_urls = {"theme_base_url":"https:\/\/dental.dttheme.com\/wp-content\/themes\/dental","framework_base_url":"https:\/\/dental.dttheme.com\/wp-content\/themes\/dental\/framework\/","ajaxurl":"https:\/\/dental.dttheme.com\/wp-admin\/admin-ajax.php","url":"https:\/\/dental.dttheme.com","stickynav":"enable","stickyele":".main-header-wrapper","isRTL":"","loadingbar":"enable","nicescroll":"disable"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://dental.dttheme.com/wp-content/themes/dental/framework/js/jquery.plugins.js?ver=4.9.9'></script>
+<script type='text/javascript' src='https://dental.dttheme.com/wp-content/themes/dental/framework/js/jquery.visualNav.min.js?ver=4.9.9'></script>
+<script type='text/javascript' src='https://dental.dttheme.com/wp-includes/js/jquery/ui/core.min.js?ver=1.11.4'></script>
+<script type='text/javascript' src='https://dental.dttheme.com/wp-includes/js/jquery/ui/datepicker.min.js?ver=1.11.4'></script>
+<script type='text/javascript'>
+jQuery(document).ready(function(jQuery){jQuery.datepicker.setDefaults({"closeText":"Close","currentText":"Today","monthNames":["January","February","March","April","May","June","July","August","September","October","November","December"],"monthNamesShort":["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"nextText":"Next","prevText":"Previous","dayNames":["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],"dayNamesShort":["Sun","Mon","Tue","Wed","Thu","Fri","Sat"],"dayNamesMin":["S","M","T","W","T","F","S"],"dateFormat":"MM d, yy","firstDay":1,"isRTL":false});});
+</script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var dtAppointmentCustom = {"plugin_url":"https:\/\/dental.dttheme.com\/wp-content\/plugins\/mnt\/data\/home\/148453.cloudwaysapps.com\/vhryaqdace\/public_html\/wp-content\/themes\/dental\/framework\/","eraptdatepicker":"Please Select Service and Date"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://dental.dttheme.com/wp-content/themes/dental/framework/js/reservation.js?ver=4.9.9'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var paceOptions = {"restartOnRequestAfter":"false","restartOnPushState":"false"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://dental.dttheme.com/wp-content/themes/dental/framework/js/pace.min.js?ver=4.9.9'></script>
+<script type='text/javascript' src='https://dental.dttheme.com/wp-content/themes/dental/framework/js/custom.js?ver=4.9.9'></script>
+<script type='text/javascript' src='https://dental.dttheme.com/wp-content/themes/dental/framework/js/jquery.cookie.min.js?ver=4.9.9'></script>
+<script type='text/javascript' src='https://dental.dttheme.com/wp-content/themes/dental/framework/js/controlpanel.js?ver=4.9.9'></script>
+<script type='text/javascript' src='https://dental.dttheme.com/wp-includes/js/wp-embed.min.js?ver=4.9.9'></script>
+</html>
